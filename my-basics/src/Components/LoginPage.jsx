@@ -1,44 +1,16 @@
-import React, {  useState } from "react";
-import { EMAIL_VALID, PASS_WORD_VALID } from "../utiles/constants";
-import { useNavigate } from "react-router-dom";
+import { useValidUser } from "../Hook/useValidUser";
 
 const LoginPage = () => {
-  const [uEmail, setUEmail] = useState("");
-  const [uPass, setUPass] = useState(null);
-  const [isEmailValid, setIsEmailValid] = useState(true);
-  const [isPassValid, setIsPassValid] = useState(true);
+  const {
+    uEmail,
+    uPass,
+    isEmailValid,
+    isPassValid,
+    handleEmail,
+    handlePass,
+    handleSubmit,
+  } =useValidUser();
 
-  const navigate = useNavigate();
-
-
-  const handleEmail = (e) => {
-    setUEmail(e.target.value);
-  };
-
-  const handlePass = (e) => {
-    setUPass(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(uEmail);
-    // console.log(uPass);
-
-    // !PASS_WORD_VALID.test(uPass)
-    //   ? alert(
-    //       "Password must be 8-16 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character."
-    //     )
-    //   : alert("Ok");
-    const emialCheck = EMAIL_VALID.test(uEmail);
-    const passCheck = PASS_WORD_VALID.test(uPass);
-
-    setIsEmailValid(emialCheck);
-    setIsPassValid(passCheck);
-
-    
-
-    emialCheck && passCheck ? (localStorage.setItem('Authentication', JSON.stringify({ Auth: true })),navigate("/")) : navigate("/login");
-  };
   return (
     <div className="h-screen flex items-center justify-center bg-[#FFE6C9]">
       <form className="w-1/3 p-9 bg-white rounded-lg">
@@ -64,9 +36,7 @@ const LoginPage = () => {
           />
         </label>
         {!isPassValid && (
-          <div className="text-red-500">
-            Password is Not Valid Chote,Wada,Special char,No.
-          </div>
+          <div className="text-red-500">Password is Not Valid</div>
         )}
         <button
           onClick={handleSubmit}

@@ -6,7 +6,7 @@ const Home = () => {
   const navigate=useNavigate()
   useEffect(()=>{
     const localVar=JSON.parse(localStorage.getItem('Authentication'))||{};
-    console.log(localVar.Auth);
+    // console.log(localVar.Auth);
 
     localVar.Auth ?console.log("Hello You are Authicate User"):navigate('/login');
   },[])
