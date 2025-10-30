@@ -1,15 +1,6 @@
-import { useEffect } from "react";
-import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
+
 
 const Home = () => {
-  const navigate=useNavigate()
-  useEffect(()=>{
-    const localVar=JSON.parse(localStorage.getItem('Authentication'))||{};
-    // console.log(localVar.Auth);
-
-    localVar.Auth ?console.log("Hello You are Authicate User"):navigate('/login');
-  },[])
   return (
     <div>
       <h1 className="text-center text-lg font-medium bg-red-400 text-white p-5">

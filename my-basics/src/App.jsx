@@ -7,38 +7,45 @@ import ControlledComponent from "./Components/ControlledComponent";
 import UncontrolledComponent from "./Components/UncontrolledComponent";
 import LoginPage from "./Components/LoginPage";
 import NotFound from "./Components/NotFound";
+import ZodFormLogin from "./Components/ZodFormLogin";
+import RedirectPage from "./Components/RedirectPage";
 
 const appRoute = createBrowserRouter([
   {
     path: "/login",
-    element: <LoginPage />,
+    // element: <LoginPage />,
+    element:<ZodFormLogin/>
   },
   {
-    path: "/",
+    path:"/",
+    element:<RedirectPage/>
+  },
+  {
+    path: "/home",
     element: <Applayout />,
     children: [
       {
-        path: "/",
+        path: "/home",
         element: <Home />,
       },
       {
-        path: "/hooks",
+        path: "/home/hooks",
         element: <Hooks />,
       },
       {
-        path: "/login",
+        path: "/home/login",
         element: <LoginPage />,
       },
       {
-        path: "/contolled-unctrolled",
+        path: "/home/contolled-unctrolled",
         element: <ConUnConComp />,
         children: [
           {
-            path: "/contolled-unctrolled/controlled",
+            path: "/home/contolled-unctrolled/controlled",
             element: <ControlledComponent />,
           },
           {
-            path: "/contolled-unctrolled/uncrolled",
+            path: "/home/contolled-unctrolled/uncrolled",
             element: <UncontrolledComponent />,
           },
         ],

@@ -18,9 +18,9 @@ const Navbar = () => {
       />
       </Link>
       <ul className="flex items-center gap-9 text-lg font-medium">
-        <li className="hover:bg-amber-50 hover:p-2 hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/">Home</Link></li>
-        <li className="hover:bg-amber-50 hover:p-2 hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/hooks">UseState & UseRef Hook</Link></li>
-        <li className="hover:bg-amber-50 hover:p-2 hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/contolled-unctrolled">Controlled & unControlled Component</Link></li>
+        <li className="hover:bg-amber-50 hover:p-2 hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/home">Home</Link></li>
+        <li className="hover:bg-amber-50 hover:p-2 hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/home/hooks">UseState & UseRef Hook</Link></li>
+        <li className="hover:bg-amber-50 hover:p-2 hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/home/contolled-unctrolled">Controlled & unControlled Component</Link></li>
         <button onClick={handleLogOut} className="bg-green-500 p-2 font-normal text-white rounded-lg hover:bg-red-700 cursor-pointer">Logout</button>
       </ul>
     </div>
