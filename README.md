@@ -135,16 +135,24 @@ my-basics/
 - User profile picture in navbar links to user profile page
 - Logout button clears user data and redirects to login
 
-### Routing Structure
+## Authentication Guards
 
-- `/login`: Login page
-- `/`: Redirects to home if authenticated, else to login
-- `/home`: Main dashboard with todos
-- `/home/hooks`: React hooks examples
-- `/home/user-profile`: User profile display
-- `/home/contolled-unctrolled`: Component types demo
-  - `/home/contolled-unctrolled/controlled`: Controlled component
-  - `/home/contolled-unctrolled/uncrolled`: Uncontrolled component
+The application uses custom authentication guard components to protect routes based on user authentication status:
+
+- **RedirectPage**: Protects authenticated routes. If the user is not authenticated (checked via localStorage "Authentication"), redirects to `/login`. If authenticated, renders the protected content.
+- **SaveRoute**: Protects unauthenticated routes (e.g., login page). If the user is authenticated, redirects to `/` (home). If not authenticated, renders the content (allowing access to login).
+
+## Routing Structure
+
+- `/login`: Login page (protected by SaveRoute - redirects authenticated users to home)
+- `/`: Main app (protected by RedirectPage - requires authentication, redirects to login if not authenticated)
+  - `/`: Home page with todo section
+  - `/hooks`: React hooks examples
+  - `/user-profile`: User profile display
+  - `/contolled-unctrolled`: Component types demo
+    - `/contolled-unctrolled/controlled`: Controlled component
+    - `/contolled-unctrolled/uncrolled`: Uncontrolled component
+  - `*`: 404 Not Found page
 
 ## State Management
 
