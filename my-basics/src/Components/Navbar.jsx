@@ -1,21 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { selectUser } from "../store/slices/userSlice";
+import { clearUser, selectUser } from "../store/slices/userSlice";
 
 const Navbar = () => {
   const navigate=useNavigate()
+  const dispatch=useDispatch();
   const userData = useSelector(selectUser);
 
   //User Profile from the store
   const userDp=userData?.user?.address?.profilePicture;
-  console.log(userDp)
+  // console.log(userDp)
 
   //localStorage
   // const user=JSON.parse(localStorage.getItem("user"))
   // const userDp=user?.user?.address?.profilePicture
 
   const handleLogOut=()=>{
+    dispatch(clearUser());
     localStorage.setItem("Authentication",JSON.stringify({Auth:false}));
     navigate('/login');
   }
