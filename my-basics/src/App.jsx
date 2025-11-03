@@ -37,10 +37,10 @@ const appRoute = createBrowserRouter([
         path: "/home/user-profile",
         element: <UserProfile />,
       },
-      {
-        path: "/home/login",
-        element: <LoginPage />,
-      },
+      // {
+      //   path: "/home/login",
+      //   element: <LoginPage />,
+      // },
       {
         path: "/home/contolled-unctrolled",
         element: <ConUnConComp />,

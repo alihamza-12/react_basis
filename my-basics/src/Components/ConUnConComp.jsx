@@ -5,13 +5,13 @@ const ConUnConComp = () => {
     <div>
       <ul className="flex my-7 gap-15 justify-center">
         <li className=" p-2 bg-green-400 text-lg rounded-lg hover:bg-amber-200 hover:underline hover:text-blue-600">
-          <Link to="/contolled-unctrolled/controlled">
+          <Link to="/home/contolled-unctrolled/controlled">
             {" "}
             Controlled component
           </Link>
         </li>
         <li className="p-2 bg-green-400 text-lg rounded-lg hover:bg-amber-200 hover:underline hover:text-blue-600">
-          <Link to="/contolled-unctrolled/uncrolled">
+          <Link to="/home/contolled-unctrolled/uncrolled">
             {" "}
             UnControlled component
           </Link>
