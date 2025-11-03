@@ -18,8 +18,8 @@ const ZodFormLogin = () => {
   const [logInError, setLogInError] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const selectUserState = useSelector(selectUser)
-  console.log(selectUserState)
+  // const selectUserState = useSelector(selectUser)
+  // console.log(selectUserState)
 
   //Setup React Hook Form
   const {
@@ -37,7 +37,7 @@ const ZodFormLogin = () => {
     const userExist = users.find(
       (u) => u.email === data.email && u.password === data.password
     );
-    console.log(userExist);
+    // console.log(userExist);
     userExist
       ? //dispatch action to store the user data
         (dispatch(setUserData(userExist)),

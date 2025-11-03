@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const ControlledComponent = () => {
   const [inputValue, setInputValue] = useState("");
-  console.log("Component Render");
+  // console.log("Component Render");
 
   const handleInput = (e) => {
     setInputValue(e.target.value);

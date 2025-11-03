@@ -9,6 +9,7 @@ import LoginPage from "./Components/LoginPage";
 import NotFound from "./Components/NotFound";
 import ZodFormLogin from "./Components/ZodFormLogin";
 import RedirectPage from "./Components/RedirectPage";
+import UserProfile from "./Components/UserProfile";
 
 const appRoute = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const appRoute = createBrowserRouter([
       {
         path: "/home/hooks",
         element: <Hooks />,
+      },
+      {
+        path: "/home/user-profile",
+        element: <UserProfile />,
       },
       {
         path: "/home/login",

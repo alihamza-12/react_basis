@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 
 const Hooks = () => {
-  console.log("Component render");
+  // console.log("Component render");
   //UseState
   const [counter, setCounter] = useState(0);
   //UseRef
