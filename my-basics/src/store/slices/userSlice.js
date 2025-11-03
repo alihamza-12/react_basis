@@ -2,9 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const USER_STORE_KEY = "user";
 
-const storedUser=JSON.parse(localStorage.getItem(USER_STORE_KEY));
+const storedUser = JSON.parse(localStorage.getItem(USER_STORE_KEY));
 // console.log(storedUser)
-
 
 const initialState = storedUser || {
   user: {
@@ -20,7 +19,7 @@ const initialState = storedUser || {
       city: "",
       state: "",
       zip: "",
-      profilePicture: "",
+      profilePicture: null,
     },
   },
 };
@@ -35,14 +34,14 @@ const userSlice = createSlice({
       localStorage.setItem(USER_STORE_KEY, JSON.stringify(state));
     },
     clearUser: (state) => {
-      state.user = initialState.user.user;
+      state.user = initialState.user;
       localStorage.removeItem(USER_STORE_KEY);
     },
   },
 });
 
 export const { setUserData, clearUser } = userSlice.actions;
-export const selectUser = (store)=>store.user; 
+export const selectUser = (store) => store.user;
 // => {
 //   let user = {};
 
