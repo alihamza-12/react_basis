@@ -10,31 +10,37 @@ import NotFound from "./Components/NotFound";
 import ZodFormLogin from "./Components/ZodFormLogin";
 import RedirectPage from "./Components/RedirectPage";
 import UserProfile from "./Components/UserProfile";
+import SaveRoute from "./Components/SaveRoute";
 
 const appRoute = createBrowserRouter([
   {
     path: "/login",
     // element: <LoginPage />,
-    element:<ZodFormLogin/>
+    element: (
+      <SaveRoute>
+        <ZodFormLogin />
+      </SaveRoute>
+    ),
   },
+
   {
-    path:"/",
-    element:<RedirectPage/>
-  },
-  {
-    path: "/home",
-    element: <Applayout />,
+    path: "/",
+    element: (
+      <RedirectPage>
+        <Applayout />
+      </RedirectPage>
+    ),
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home />,
       },
       {
-        path: "/home/hooks",
+        path: "/hooks",
         element: <Hooks />,
       },
       {
-        path: "/home/user-profile",
+        path: "/user-profile",
         element: <UserProfile />,
       },
       // {
@@ -42,15 +48,15 @@ const appRoute = createBrowserRouter([
       //   element: <LoginPage />,
       // },
       {
-        path: "/home/contolled-unctrolled",
+        path: "/contolled-unctrolled",
         element: <ConUnConComp />,
         children: [
           {
-            path: "/home/contolled-unctrolled/controlled",
+            path: "/contolled-unctrolled/controlled",
             element: <ControlledComponent />,
           },
           {
-            path: "/home/contolled-unctrolled/uncrolled",
+            path: "/contolled-unctrolled/uncrolled",
             element: <UncontrolledComponent />,
           },
         ],
