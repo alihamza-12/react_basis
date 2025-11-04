@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { clearUser, selectUser } from "../store/slices/userSlice";
+import ToggleButton from "./ToggleButton";
 
 const Navbar = () => {
   const navigate=useNavigate()
@@ -31,12 +32,14 @@ const Navbar = () => {
       />
       </Link>
       <ul className="flex items-center gap-9 text-lg font-medium">
-        <li className="hover:bg-amber-50 hover:p-2 hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/">Home</Link></li>
-        <li className="hover:bg-amber-50 hover:p-2 hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/hooks">UseState & UseRef Hook</Link></li>
-        <li className="hover:bg-amber-50 hover:p-2 hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/contolled-unctrolled">Controlled & unControlled Component</Link></li>
+        <li className="hover:bg-amber-50  hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/">Home</Link></li>
+        <li className="hover:bg-amber-50  hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/hooks">UseState & UseRef Hook</Link></li>
+        <li className="hover:bg-amber-50  hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/signals-state-management">Signals State Management</Link></li>
+        <li className="hover:bg-amber-50  hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/contolled-unctrolled">Controlled & unControlled Component</Link></li>
         <button onClick={handleLogOut} className="bg-green-500 p-2 font-normal text-white rounded-lg hover:bg-red-700 cursor-pointer">Logout</button>
-        <Link to="/user-profile"><img className="h-12 rounded-4xl hover:m-1 cursor-pointer hover:border border-red-600" src={userDp || "https://img.favpng.com/1/9/15/3d-male-avatar-cartoon-man-with-glasses-Bnq3PC7J_t.jpg"} alt="User-Pic" /></Link>
+        <Link to="/user-profile"><img className="h-12 rounded-4xl cursor-pointer hover:border border-red-600" src={userDp || "https://img.favpng.com/1/9/15/3d-male-avatar-cartoon-man-with-glasses-Bnq3PC7J_t.jpg"} alt="User-Pic" /></Link>
       </ul>
+      <ToggleButton/>
     </div>
   );
 };

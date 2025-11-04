@@ -180,3 +180,11 @@ The application uses custom authentication guard components to protect routes ba
 - Tailwind CSS for responsive, utility-first styling
 - Custom classes for hover effects and animations
 - Consistent color scheme with amber and blue accents
+
+
+
+
+
+installing the npm install @preact/signals-react
+and implement the SignalsStateManag.jsx according to signal variable increasing decrecing and 
+then make a seprate stroe of signal for the theme ?dark:light and the componnet also

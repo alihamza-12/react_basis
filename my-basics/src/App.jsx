@@ -11,6 +11,8 @@ import ZodFormLogin from "./Components/ZodFormLogin";
 import RedirectPage from "./Components/RedirectPage";
 import UserProfile from "./Components/UserProfile";
 import SaveRoute from "./Components/SaveRoute";
+import SignalsStateManag from "./Components/SignalsStateManag";
+import ToggleButton from "./Components/ToggleButton";
 
 const appRoute = createBrowserRouter([
   {
@@ -43,10 +45,10 @@ const appRoute = createBrowserRouter([
         path: "/user-profile",
         element: <UserProfile />,
       },
-      // {
-      //   path: "/home/login",
-      //   element: <LoginPage />,
-      // },
+      {
+        path: "/signals-state-management",
+        element: <SignalsStateManag />,
+      },
       {
         path: "/contolled-unctrolled",
         element: <ConUnConComp />,
