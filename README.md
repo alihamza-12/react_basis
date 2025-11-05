@@ -181,10 +181,39 @@ The application uses custom authentication guard components to protect routes ba
 - Custom classes for hover effects and animations
 - Consistent color scheme with amber and blue accents
 
+## Dark Mode Theme Toggle with Preact Signals
 
+### Installation
 
+Install Preact Signals for reactive state management:
 
+```bash
+npm install @preact/signals-react
+```
 
-installing the npm install @preact/signals-react
-and implement the SignalsStateManag.jsx according to signal variable increasing decrecing and 
-then make a seprate stroe of signal for the theme ?dark:light and the componnet also
+### Implementation
+
+#### Signals State Management Component (SignalsStateManag.jsx)
+
+This component demonstrates Preact Signals for reactive state management with a counter example:
+
+- Uses `signal()` to create a reactive counter variable
+- `useSignalEffect()` to log changes without re-rendering the entire component
+- Buttons increment/decrement the counter, updating only the affected DOM elements
+- Signals provide fine-grained reactivity, improving performance by avoiding unnecessary re-renders
+
+#### Theme Toggle with Signals
+
+A separate signal store manages the theme state:
+
+- `ToggleBtn.js`: Contains `toggleBtnVal` signal (boolean: true for light, false for dark)
+- `ToggleButton.jsx`: Toggles the signal value and applies/removes "dark" class on document element
+- Components use Tailwind's `dark:` prefixes for dark mode styles
+- Theme changes are reactive and instant across the application
+
+### Features
+
+- **Reactive Theme Toggle**: Instant theme switching without full component re-renders
+- **Signal-Based State**: Efficient state management for theme and counters
+- **Tailwind Dark Mode**: Automatic dark mode styling with `dark:` variants
+- **Persistent UI Updates**: DOM updates only for changed elements
