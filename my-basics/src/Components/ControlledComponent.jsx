@@ -8,25 +8,25 @@ const ControlledComponent = () => {
     setInputValue(e.target.value);
   };
 
-//   console.log(inputValue);
+  //   console.log(inputValue);
 
-  const handleClick = () => { 
-    alert(`User Name is: ${inputValue}`)
+  const handleClick = () => {
+    alert(`User Name is: ${inputValue}`);
   };
   return (
     <div className="m-10">
       <div>
-        <h1 className="text-lg font-medium my-2">
+        <h1 className="text-lg font-medium my-2 dark:text-white">
           🧭 1. Controlled Components
         </h1>
-        <p className="text-lg">
+        <p className="text-lg dark:text-white">
           A controlled component is one where React controls the form input’s
           value through state.That means the value of the input comes from
           React’s state, not directly from the DOM.
         </p>
         <hr />
-        <h1 className="text-lg font-medium my-2">Example</h1>
-        <p>
+        <h1 className="text-lg font-medium my-2 dark:text-white">Example</h1>
+        <p className="dark:text-white">
           Form input get the data from the Input field using useState Hook then
           the component wil reload ater update the state variable In that way
           the React do that.
@@ -42,14 +42,14 @@ const ControlledComponent = () => {
         }}
       >
         <input
-          className="border p-2 rounded-lg bg-gray-300"
+          className="border p-2 rounded-lg bg-gray-300 dark:bg-gray-700 dark:text-white"
           type="text"
           value={inputValue}
           onChange={handleInput}
           placeholder="Enter Your Name"
         />
         <button
-          className="bg-rose-400 p-2 rounded-lg text-white cursor-pointer"
+          className="bg-rose-400 p-2 rounded-lg text-white cursor-pointer dark:bg-rose-600"
           onClick={handleClick}
         >
           Submit

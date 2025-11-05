@@ -22,13 +22,13 @@ const TodoInput = () => {
         value={newTodo}
         onChange={handleInput}
         onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-        className="p-3 bg-gray-200 rounded-lg w-1/3 outline-none focus:ring-2 focus:ring-blue-400"
+        className="p-3 bg-gray-200 dark:bg-gray-700 dark:text-white rounded-lg w-1/3 outline-none focus:ring-2 focus:ring-blue-400"
         type="text"
         placeholder="Enter your Todo Item"
       />
       <button
         onClick={handleSubmit}
-        className="p-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 cursor-pointer"
+        className="p-3 rounded-lg bg-blue-500 dark:bg-blue-700 text-white hover:bg-blue-600 dark:hover:bg-blue-800 cursor-pointer"
       >
         Submit
       </button>

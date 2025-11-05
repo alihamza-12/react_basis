@@ -5,41 +5,69 @@ import { clearUser, selectUser } from "../store/slices/userSlice";
 import ToggleButton from "./ToggleButton";
 
 const Navbar = () => {
-  const navigate=useNavigate()
-  const dispatch=useDispatch();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const userData = useSelector(selectUser);
 
   //User Profile from the store
-  const userDp=userData?.user?.address?.profilePicture;
+  const userDp = userData?.user?.address?.profilePicture;
   // console.log(userDp)
 
   //localStorage
   // const user=JSON.parse(localStorage.getItem("user"))
   // const userDp=user?.user?.address?.profilePicture
 
-  const handleLogOut=()=>{
+  const handleLogOut = () => {
     dispatch(clearUser());
-    localStorage.setItem("Authentication",JSON.stringify({Auth:false}));
-    navigate('/login');
-  }
+    localStorage.setItem("Authentication", JSON.stringify({ Auth: false }));
+    navigate("/login");
+  };
   return (
-    <div className="flex justify-between border p-2 bg-amber-100">
-        <Link to="/">
-      <img
-        className="h-14 hover:bg-amber-50 hover:p-1 rounded-lg cursor-pointer"
-        src="https://download.logo.wine/logo/React_(web_framework)/React_(web_framework)-Logo.wine.png"
-        alt="React"
-      />
+    <div className="flex justify-between border p-2 bg-amber-100 dark:bg-gray-800 dark:border-gray-600">
+      <Link to="/">
+        <img
+          className="h-14 hover:bg-amber-50 dark:hover:bg-gray-700 hover:p-1 rounded-lg cursor-pointer"
+          src="https://download.logo.wine/logo/React_(web_framework)/React_(web_framework)-Logo.wine.png"
+          alt="React"
+        />
       </Link>
-      <ul className="flex items-center gap-9 text-lg font-medium">
-        <li className="hover:bg-amber-50  hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/">Home</Link></li>
-        <li className="hover:bg-amber-50  hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/hooks">UseState & UseRef Hook</Link></li>
-        <li className="hover:bg-amber-50  hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/signals-state-management">Signals State Management</Link></li>
-        <li className="hover:bg-amber-50  hover:text-red-400 rounded-lg hover:underline cursor-pointer"> <Link to="/contolled-unctrolled">Controlled & unControlled Component</Link></li>
-        <button onClick={handleLogOut} className="bg-green-500 p-2 font-normal text-white rounded-lg hover:bg-red-700 cursor-pointer">Logout</button>
-        <Link to="/user-profile"><img className="h-12 rounded-4xl cursor-pointer hover:border border-red-600" src={userDp || "https://img.favpng.com/1/9/15/3d-male-avatar-cartoon-man-with-glasses-Bnq3PC7J_t.jpg"} alt="User-Pic" /></Link>
+      <ul className="flex items-center gap-9 text-lg font-medium text-black dark:text-white">
+        <li className="hover:bg-amber-50 dark:hover:bg-gray-700 hover:text-red-400 rounded-lg hover:underline cursor-pointer">
+          {" "}
+          <Link to="/">Home</Link>
+        </li>
+        <li className="hover:bg-amber-50 dark:hover:bg-gray-700 hover:text-red-400 rounded-lg hover:underline cursor-pointer">
+          {" "}
+          <Link to="/hooks">UseState & UseRef Hook</Link>
+        </li>
+        <li className="hover:bg-amber-50 dark:hover:bg-gray-700 hover:text-red-400 rounded-lg hover:underline cursor-pointer">
+          {" "}
+          <Link to="/signals-state-management">Signals State Management</Link>
+        </li>
+        <li className="hover:bg-amber-50 dark:hover:bg-gray-700 hover:text-red-400 rounded-lg hover:underline cursor-pointer">
+          {" "}
+          <Link to="/contolled-unctrolled">
+            Controlled & unControlled Component
+          </Link>
+        </li>
+        <button
+          onClick={handleLogOut}
+          className="bg-green-500 p-2 font-normal text-white rounded-lg hover:bg-red-700 cursor-pointer"
+        >
+          Logout
+        </button>
+        <Link to="/user-profile">
+          <img
+            className="h-12 rounded-4xl cursor-pointer hover:border border-red-600"
+            src={
+              userDp ||
+              "https://img.favpng.com/1/9/15/3d-male-avatar-cartoon-man-with-glasses-Bnq3PC7J_t.jpg"
+            }
+            alt="User-Pic"
+          />
+        </Link>
       </ul>
-      <ToggleButton/>
+      <ToggleButton />
     </div>
   );
 };

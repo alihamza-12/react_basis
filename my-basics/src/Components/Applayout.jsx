@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import { Outlet, useNavigate } from 'react-router-dom'
+import React, { useEffect } from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Applayout = () => {
-  const navigate=useNavigate()
-  useEffect(()=>{
-    const localVar=JSON.parse(localStorage.getItem('Authentication'))||{};
+  const navigate = useNavigate();
+  useEffect(() => {
+    const localVar = JSON.parse(localStorage.getItem("Authentication")) || {};
     // console.log(localVar.Auth);
 
-    localVar.Auth ?console.log("Hi"):navigate('/login');
-  },[])
+    localVar.Auth ? console.log("Hi") : navigate("/login");
+  }, []);
 
   return (
-    <div>
-        <Navbar/>
-        <Outlet/>
-        <Footer/>
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <Navbar />
+      <Outlet />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Applayout
+export default Applayout;
