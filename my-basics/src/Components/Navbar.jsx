@@ -23,28 +23,28 @@ const Navbar = () => {
     navigate("/login");
   };
   return (
-    <div className="flex justify-between border p-2 bg-amber-100 dark:bg-gray-800 dark:border-gray-600">
+    <div className="flex justify-between items-center p-4 bg-gradient-to-r from-amber-100 to-yellow-100 dark:from-slate-900 dark:to-slate-800 rounded-xl shadow-lg border-b border-gray-200 dark:border-gray-700">
       <Link to="/">
         <img
-          className="h-14 hover:bg-amber-50 dark:hover:bg-gray-700 hover:p-1 rounded-lg cursor-pointer"
+          className="h-16 hover:bg-amber-50 dark:hover:bg-slate-700 hover:p-2 rounded-xl cursor-pointer transition-all duration-200 hover:scale-105 shadow-md"
           src="https://download.logo.wine/logo/React_(web_framework)/React_(web_framework)-Logo.wine.png"
           alt="React"
         />
       </Link>
-      <ul className="flex items-center gap-9 text-lg font-medium text-black dark:text-white">
-        <li className="hover:bg-amber-50 dark:hover:bg-gray-700 hover:text-red-400 rounded-lg hover:underline cursor-pointer">
+      <ul className="flex items-center gap-6 text-lg font-medium text-black dark:text-white">
+        <li className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-amber-100 dark:hover:bg-gradient-to-r dark:hover:from-slate-700 dark:hover:to-slate-600 hover:text-red-400 dark:hover:text-red-300 rounded-lg hover:underline cursor-pointer p-2 transition-all duration-200 hover:scale-105">
           {" "}
           <Link to="/">Home</Link>
         </li>
-        <li className="hover:bg-amber-50 dark:hover:bg-gray-700 hover:text-red-400 rounded-lg hover:underline cursor-pointer">
+        <li className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-amber-100 dark:hover:bg-gradient-to-r dark:hover:from-slate-700 dark:hover:to-slate-600 hover:text-red-400 dark:hover:text-red-300 rounded-lg hover:underline cursor-pointer p-2 transition-all duration-200 hover:scale-105">
           {" "}
           <Link to="/hooks">UseState & UseRef Hook</Link>
         </li>
-        <li className="hover:bg-amber-50 dark:hover:bg-gray-700 hover:text-red-400 rounded-lg hover:underline cursor-pointer">
+        <li className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-amber-100 dark:hover:bg-gradient-to-r dark:hover:from-slate-700 dark:hover:to-slate-600 hover:text-red-400 dark:hover:text-red-300 rounded-lg hover:underline cursor-pointer p-2 transition-all duration-200 hover:scale-105">
           {" "}
           <Link to="/signals-state-management">Signals State Management</Link>
         </li>
-        <li className="hover:bg-amber-50 dark:hover:bg-gray-700 hover:text-red-400 rounded-lg hover:underline cursor-pointer">
+        <li className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-amber-100 dark:hover:bg-gradient-to-r dark:hover:from-slate-700 dark:hover:to-slate-600 hover:text-red-400 dark:hover:text-red-300 rounded-lg hover:underline cursor-pointer p-2 transition-all duration-200 hover:scale-105">
           {" "}
           <Link to="/contolled-unctrolled">
             Controlled & unControlled Component
@@ -52,13 +52,13 @@ const Navbar = () => {
         </li>
         <button
           onClick={handleLogOut}
-          className="bg-green-500 p-2 font-normal text-white rounded-lg hover:bg-red-700 cursor-pointer"
+          className="bg-gradient-to-r from-green-500 to-green-600 dark:from-green-600 dark:to-green-700 p-3 font-normal text-white rounded-lg hover:from-red-500 hover:to-red-600 dark:hover:from-red-600 dark:hover:to-red-700 cursor-pointer transition-all duration-200 hover:scale-105 shadow-md"
         >
           Logout
         </button>
         <Link to="/user-profile">
           <img
-            className="h-12 rounded-4xl cursor-pointer hover:border border-red-600"
+            className="h-14 rounded-full cursor-pointer hover:border-2 border-red-600 dark:border-red-400 shadow-md transition-all duration-200 hover:scale-105"
             src={
               userDp ||
               "https://img.favpng.com/1/9/15/3d-male-avatar-cartoon-man-with-glasses-Bnq3PC7J_t.jpg"

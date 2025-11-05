@@ -28,9 +28,9 @@ const TodoInput = () => {
       />
       <button
         onClick={handleSubmit}
-        className="p-3 rounded-lg bg-blue-500 dark:bg-blue-700 text-white hover:bg-blue-600 dark:hover:bg-blue-800 cursor-pointer"
+        className="p-3 rounded-lg bg-green-500 dark:bg-emerald-700 text-white hover:bg-green-600 dark:hover:bg-emerald-800 cursor-pointer transition-all duration-200 hover:scale-105 shadow-md"
       >
-        Submit
+        Add Todo
       </button>
     </div>
   );

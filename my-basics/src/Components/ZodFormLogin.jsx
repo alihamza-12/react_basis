@@ -46,33 +46,50 @@ const ZodFormLogin = () => {
       : (setLogInError(true), navigate("/login"));
   };
   return (
-    <div className="h-screen flex items-center justify-center bg-[#FFE6C9]">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-100 to-pink-100 dark:from-gray-900 dark:to-gray-800 p-6">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-1/3 p-9 bg-white rounded-lg"
+        className="w-full max-w-md p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700"
       >
-        <label>Email</label>
-        <input
-          className="bg-gray-300 p-2 rounded-lg w-full"
-          type="text"
-          {...register("email")}
-        />
-        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
+          Login
+        </h2>
+        <div className="mb-6">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Email
+          </label>
+          <input
+            className="bg-gray-200 dark:bg-gray-700 p-3 rounded-lg w-full border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-orange-400 outline-none transition-all duration-200 dark:text-white"
+            type="text"
+            {...register("email")}
+          />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+          )}
+        </div>
 
-        <label>Password</label>
-        <input
-          className="bg-gray-300 p-2 rounded-lg w-full"
-          type="password"
-          {...register("password")}
-        />
-        {errors.password ? (
-          <p className="text-red-500">{errors.password.message}</p>
-        ) : (
-          logInError && <p className="text-red-500">InValid Caridentials</p>
-        )}
+        <div className="mb-6">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Password
+          </label>
+          <input
+            className="bg-gray-200 dark:bg-gray-700 p-3 rounded-lg w-full border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-orange-400 outline-none transition-all duration-200 dark:text-white"
+            type="password"
+            {...register("password")}
+          />
+          {errors.password ? (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.password.message}
+            </p>
+          ) : (
+            logInError && (
+              <p className="text-red-500 text-sm mt-1">Invalid Credentials</p>
+            )
+          )}
+        </div>
 
         <button
-          className="p-2 cursor-pointer bg-[#7F265B] rounded-lg text-white w-full mt-8"
+          className="p-3 cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-700 dark:to-pink-700 rounded-lg text-white w-full mt-8 hover:from-purple-700 hover:to-pink-700 dark:hover:from-purple-800 dark:hover:to-pink-800 transition-all duration-200 hover:scale-105 shadow-md"
           type="submit"
         >
           Submit
