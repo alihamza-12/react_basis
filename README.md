@@ -175,11 +175,19 @@ The application uses custom authentication guard components to protect routes ba
 - React Hook Form for performant form handling
 - Real-time error display for invalid inputs
 
-## Styling
+## Styling & UI Enhancements
 
-- Tailwind CSS for responsive, utility-first styling
-- Custom classes for hover effects and animations
-- Consistent color scheme with amber and blue accents
+- **Tailwind CSS**: Responsive, utility-first styling with dark mode support using `dark:` prefixes
+- **Gradients**: Beautiful gradient backgrounds for components (e.g., blue-indigo for UserProfile, green-cyan for Hooks, purple-pink for ControlledComponent, indigo-purple for UncontrolledComponent, red-orange for SignalsStateManag, orange-pink for Login)
+- **Typography**: Enhanced text sizing (text-2xl, text-3xl, text-4xl) with bold fonts for better readability
+- **Shadows**: Multiple shadow levels (shadow-md, shadow-lg, shadow-2xl) for depth and visual hierarchy
+- **Transitions**: Smooth animations with `transition-all duration-200/300` and hover effects like `hover:scale-105`
+- **Dark Mode**: Comprehensive dark mode implementation with white text (`dark:text-white`) and appropriate dark backgrounds
+- **Navbar**: Impressive gradient navbar with hover animations, scaling effects, and improved user profile display
+- **Component Layouts**: Full-screen backgrounds with proper spacing (`min-h-screen`, `pb-20` for footer clearance)
+- **Form Styling**: Modern form designs with focus rings, borders, and gradient buttons
+- **Consistent Design**: Cohesive color schemes and styling patterns across all components
+- **Responsive Design**: Mobile-friendly layouts with proper padding and margins
 
 ## Dark Mode Theme Toggle with Preact Signals
 
