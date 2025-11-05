@@ -13,6 +13,8 @@ import UserProfile from "./Components/UserProfile";
 import SaveRoute from "./Components/SaveRoute";
 import SignalsStateManag from "./Components/SignalsStateManag";
 import ToggleButton from "./Components/ToggleButton";
+import ApisSection from "./Components/ApisSection";
+import SimpleFetch from "./Components/SimpleFetch";
 
 const appRoute = createBrowserRouter([
   {
@@ -48,6 +50,16 @@ const appRoute = createBrowserRouter([
       {
         path: "/signals-state-management",
         element: <SignalsStateManag />,
+      },
+      {
+        path: "/apis",
+        element: <ApisSection />,
+        children: [
+          {
+            path: "/apis/simple-fetch",
+            element: <SimpleFetch />,
+          },
+        ],
       },
       {
         path: "/contolled-unctrolled",

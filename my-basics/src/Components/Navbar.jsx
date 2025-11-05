@@ -50,6 +50,12 @@ const Navbar = () => {
             Controlled & unControlled Component
           </Link>
         </li>
+        <li className="hover:bg-gradient-to-r hover:from-amber-50 hover:to-amber-100 dark:hover:bg-gradient-to-r dark:hover:from-slate-700 dark:hover:to-slate-600 hover:text-red-400 dark:hover:text-red-300 rounded-lg hover:underline cursor-pointer p-2 transition-all duration-200 hover:scale-105">
+          {" "}
+          <Link to="/apis">
+            Apis
+          </Link>
+        </li>
         <button
           onClick={handleLogOut}
           className="bg-gradient-to-r from-green-500 to-green-600 dark:from-green-600 dark:to-green-700 p-2 md:p-3 font-normal text-white rounded-lg hover:from-red-500 hover:to-red-600 dark:hover:from-red-600 dark:hover:to-red-700 cursor-pointer transition-all duration-200 hover:scale-105 shadow-md"
