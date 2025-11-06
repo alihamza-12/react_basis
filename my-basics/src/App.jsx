@@ -5,16 +5,15 @@ import Applayout from "./Components/Applayout";
 import ConUnConComp from "./Components/ConUnConComp";
 import ControlledComponent from "./Components/ControlledComponent";
 import UncontrolledComponent from "./Components/UncontrolledComponent";
-import LoginPage from "./Components/LoginPage";
 import NotFound from "./Components/NotFound";
 import ZodFormLogin from "./Components/ZodFormLogin";
 import RedirectPage from "./Components/RedirectPage";
 import UserProfile from "./Components/UserProfile";
 import SaveRoute from "./Components/SaveRoute";
 import SignalsStateManag from "./Components/SignalsStateManag";
-import ToggleButton from "./Components/ToggleButton";
 import ApisSection from "./Components/ApisSection";
 import SimpleFetch from "./Components/SimpleFetch";
+import PostMethod from "./Components/PostMethod";
 
 const appRoute = createBrowserRouter([
   {
@@ -56,8 +55,12 @@ const appRoute = createBrowserRouter([
         element: <ApisSection />,
         children: [
           {
-            path: "/apis/simple-fetch",
+            path: "/apis/fetch-method",
             element: <SimpleFetch />,
+          },
+          {
+            path: "/apis/post-method",
+            element: <PostMethod />,
           },
         ],
       },
