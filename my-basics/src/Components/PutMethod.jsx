@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const PostMethod = () => {
+const PutMethod = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   //   const [fPosts, setFposts] = useState(false);
   const [posts, setPosts] = useState([]);
+  const [id, setId] = useState("");
+  const [userId, setUserId] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
@@ -44,23 +46,30 @@ const PostMethod = () => {
   const handleBodyChange = (e) => {
     setBody(e.target.value);
   };
+  const handleIdChange = (e) => {
+    setId(e.target.value);
+  };
+  const handleUserIdChange = (e) => {
+    setUserId(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const postData = {
-      userId: 1,
+    const putData = {
+      id,
+      userId,
       title,
       body,
     };
 
     try {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts",
+        `https://jsonplaceholder.typicode.com/posts/${id}`,
         {
-          method: "POST",
-          body: JSON.stringify(postData),
+          method: "PUT",
+          body: JSON.stringify(putData),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
           },
@@ -72,14 +81,21 @@ const PostMethod = () => {
       }
       const finalData = await response.json();
       console.log(finalData);
-      setPosts([finalData, ...posts]);
+
+      //on each post check id if equal then replace otherwise return post
+      setPosts((prePost) =>
+        prePost.map((post) => (post.id === finalData.id ? finalData : post))
+      );
+      
       setLoading(false);
+      setId("");
+      setUserId("");
       setTitle("");
       setBody("");
     } catch (error) {
       console.log("Somethings wrong", error);
       setLoading(false);
-      setError("Falied to create post. Try again later!");
+      setError("Falied to Put post. Try again later!");
     }
   };
 
@@ -101,7 +117,7 @@ const PostMethod = () => {
   return (
     <div className="pb-20">
       <h1 className="text-xl bg-gradient-to-r from-red-400 to-pink-500 p-2 rounded-lg text-white text-center mb-4 shadow-lg">
-        Create and Display Posts
+        Put(Replace) Posts and Display
       </h1>
 
       {/* Form for creating a new post */}
@@ -109,6 +125,41 @@ const PostMethod = () => {
         onSubmit={handleSubmit}
         className="mb-4 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-300 dark:border-gray-700 max-w-md mx-auto"
       >
+        <div className="mb-4">
+          <label
+            htmlFor="id"
+            className="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2"
+          >
+            ID
+          </label>
+          <input
+            type="number"
+            id="id"
+            value={id}
+            onChange={handleIdChange}
+            className="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300 transition duration-300 ease-in-out shadow-sm"
+            placeholder="Enter the ID"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            htmlFor="userId"
+            className="block text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2"
+          >
+            UserID
+          </label>
+          <input
+            type="number"
+            id="userId"
+            value={userId}
+            onChange={handleUserIdChange}
+            className="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300 transition duration-300 ease-in-out shadow-sm"
+            placeholder="Enter the UserID"
+            required
+          />
+        </div>
+
         <div className="mb-4">
           <label
             htmlFor="title"
@@ -147,7 +198,7 @@ const PostMethod = () => {
           type="submit"
           className="block w-1/2 mx-auto py-3 cursor-pointer bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300 transition duration-300 ease-in-out shadow-md font-semibold"
         >
-          Create Post
+          Put Post
         </button>
       </form>
 
@@ -173,4 +224,4 @@ const PostMethod = () => {
   );
 };
 
-export default PostMethod;
+export default PutMethod;

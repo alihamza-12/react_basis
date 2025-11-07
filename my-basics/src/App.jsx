@@ -14,6 +14,7 @@ import SignalsStateManag from "./Components/SignalsStateManag";
 import ApisSection from "./Components/ApisSection";
 import SimpleFetch from "./Components/SimpleFetch";
 import PostMethod from "./Components/PostMethod";
+import PutMethod from "./Components/PutMethod";
 
 const appRoute = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const appRoute = createBrowserRouter([
           {
             path: "/apis/post-method",
             element: <PostMethod />,
+          },
+          {
+            path: "/apis/put-method",
+            element: <PutMethod />,
           },
         ],
       },
