@@ -113,7 +113,7 @@ const PatchMethod = () => {
   return (
     <div className="pb-20">
       <h1 className="text-xl bg-gradient-to-r from-red-400 to-pink-500 p-2 rounded-lg text-white text-center mb-4 shadow-lg">
-        Put(Replace) Posts and Display
+        PATCH(update/modify) Posts and Display
       </h1>
 
       {/* Form for creating a new post */}

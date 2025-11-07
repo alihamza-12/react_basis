@@ -16,6 +16,7 @@ import SimpleFetch from "./Components/SimpleFetch";
 import PostMethod from "./Components/PostMethod";
 import PutMethod from "./Components/PutMethod";
 import PatchMethod from "./Components/PatchMethod";
+import DeleteMethod from "./Components/DeleteMethod";
 
 const appRoute = createBrowserRouter([
   {
@@ -71,6 +72,9 @@ const appRoute = createBrowserRouter([
           {
             path: "/apis/patch-method",
             element: <PatchMethod />,
+          }, {
+            path: "/apis/delete-method",
+            element: <DeleteMethod />,
           },
         ],
       },
