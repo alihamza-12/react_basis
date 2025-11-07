@@ -11,7 +11,7 @@ This project serves as a comprehensive learning resource for React developers, c
 - **State Management**: Redux Toolkit for complex state, Zustand for lightweight state, Preact Signals for reactive state
 - **Routing**: Client-side routing with React Router DOM, nested routes, protected routes
 - **Forms and Validation**: React Hook Form with Zod schema validation
-- **API Interactions**: Fetching data, POST requests, error handling
+- **API Interactions**: Fetching data, POST, PUT, PATCH, DELETE requests, error handling
 - **Authentication**: User login, route guards, persistent authentication
 - **Styling**: Tailwind CSS with dark mode support
 - **Best Practices**: Code organization, component composition, performance optimization
@@ -88,6 +88,8 @@ my-basics/
 │   │   ├── Apis.jsx               # API related component
 │   │   ├── SimpleFetch.jsx        # Fetch method component for user data
 │   │   ├── PostMethod.jsx         # POST method component for creating posts
+│   │   ├── PatchMethod.jsx        # PATCH method component for updating posts
+│   │   ├── DeleteMethod.jsx       # DELETE method component for deleting posts
 │   │   ├── SignalsStateManag.jsx  # Signals state management demo
 │   │   ├── ToggleButton.jsx       # Theme toggle button
 │   │   └── Footer.jsx             # Footer component
@@ -191,6 +193,8 @@ my-basics/
 - Navigate to `/apis` to access the API section
 - **Fetch Method** (`/apis/fetch-method`): View fetched user data from JSONPlaceholder with loading states
 - **POST Method** (`/apis/post-method`): Create new posts and view existing posts with form validation
+- **PATCH Method** (`/apis/patch-method`): Update existing posts via PATCH requests with form validation
+- **DELETE Method** (`/apis/delete-method`): Delete posts via DELETE requests
 
 ## Authentication Guards
 
@@ -210,6 +214,8 @@ The application uses custom authentication guard components to protect routes ba
   - `/apis`: API interactions section
     - `/apis/fetch-method`: Fetch method for user data
     - `/apis/post-method`: POST method for creating posts
+    - `/apis/patch-method`: PATCH method for updating posts
+    - `/apis/delete-method`: DELETE method for deleting posts
   - `/contolled-unctrolled`: Component types demo
     - `/contolled-unctrolled/controlled`: Controlled component
     - `/contolled-unctrolled/uncrolled`: Uncontrolled component
@@ -291,4 +297,6 @@ A separate signal store manages the theme state:
 
 - **Fetch Method**: Demonstrates simple fetch API to retrieve user data from JSONPlaceholder, displaying user names, emails, and cities with loading and error states
 - **POST Method**: Fetches existing posts from JSONPlaceholder, allows creating new posts via POST requests, and displays all posts with form validation and error handling
-- **Nested Routing**: API section uses nested routes under `/apis` for organized navigation between fetch and post methods
+- **PATCH Method**: Updates existing posts via PATCH requests, allowing partial updates with form validation and error handling
+- **DELETE Method**: Deletes posts via DELETE requests, removing them from the API and updating the UI accordingly
+- **Nested Routing**: API section uses nested routes under `/apis` for organized navigation between fetch, post, patch, and delete methods
