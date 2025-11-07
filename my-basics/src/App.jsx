@@ -15,6 +15,7 @@ import ApisSection from "./Components/ApisSection";
 import SimpleFetch from "./Components/SimpleFetch";
 import PostMethod from "./Components/PostMethod";
 import PutMethod from "./Components/PutMethod";
+import PatchMethod from "./Components/PatchMethod";
 
 const appRoute = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const appRoute = createBrowserRouter([
           {
             path: "/apis/put-method",
             element: <PutMethod />,
+          },
+          {
+            path: "/apis/patch-method",
+            element: <PatchMethod />,
           },
         ],
       },
