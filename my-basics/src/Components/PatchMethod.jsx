@@ -49,6 +49,13 @@ const PatchMethod = () => {
   const handlePostId = (postId) => {
     console.log("Id", postId);
     setId(postId);
+    //PreFilled Data On the Input fileds
+    const fillData = posts.find((post) => postId == post.id);
+    // console.log(fillData)
+    if (fillData) {
+      setTitle(fillData.title);
+      setBody(fillData.body);
+    }
     setFormloading(!formloading);
   };
   const handleSubmit = async (e) => {
